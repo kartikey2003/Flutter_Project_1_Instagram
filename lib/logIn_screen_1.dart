@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_login_screen/room_screen.dart';
 import 'package:test_login_screen/switch_account_screen.dart';
 
 class LoginScreenFirst extends StatefulWidget {
@@ -51,7 +52,13 @@ class _LoginScreenFirstState extends State<LoginScreenFirst> {
               decoration: BoxDecoration(
                   color: Colors.blue, borderRadius: BorderRadius.circular(10)),
               child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const RoomScreen()),
+                        (route) => false);
+                  },
                   child: const Text(
                     'Log In',
                     style: TextStyle(color: Colors.white),
